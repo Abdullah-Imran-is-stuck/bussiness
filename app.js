@@ -163,6 +163,11 @@ function addToCart(productId, size) {
   else state.cart.push({ productId, size, quantity: 1 });
   saveCart();
   renderCart();
+  // Give the bag badge a quick spring so the add action has immediate feedback.
+  const cartIcon = document.querySelector(".cart-icon");
+  cartIcon.classList.remove("pop");
+  void cartIcon.offsetWidth;
+  cartIcon.classList.add("pop");
   showToast(`${product.name} / ${size} added to your bag`);
 }
 
@@ -379,6 +384,8 @@ function attachTiltToCards() {
       const bounds = card.getBoundingClientRect();
       const x = (event.clientX - bounds.left) / bounds.width;
       const y = (event.clientY - bounds.top) / bounds.height;
+      card.style.setProperty("--pointer-x", `${x * 100}%`);
+      card.style.setProperty("--pointer-y", `${y * 100}%`);
       card.style.transform = `rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 5}deg)`;
     });
     card.addEventListener("pointerleave", () => { card.style.transform = ""; });
@@ -451,6 +458,11 @@ document.querySelectorAll("[data-category-link]").forEach((link) => {
   });
 });
 
+// Let the floating capsule header settle into a slightly deeper shadow on scroll.
+window.addEventListener("scroll", () => {
+  document.querySelector(".site-header").classList.toggle("is-scrolled", window.scrollY > 24);
+}, { passive: true });
+
 // Search by product name, category, or description as the visitor types.
 ui.searchInput.addEventListener("input", (event) => {
   state.searchTerm = event.target.value;
@@ -464,6 +476,13 @@ ui.productGrid.addEventListener("click", (event) => {
     const productId = addButton.dataset.addToCart;
     const selector = ui.productGrid.querySelector(`[data-size-for="${CSS.escape(productId)}"]`);
     addToCart(productId, selector.value);
+    // Confirm the specific button briefly, then restore its normal label.
+    addButton.classList.add("just-added");
+    addButton.textContent = "Added ✓";
+    window.setTimeout(() => {
+      addButton.classList.remove("just-added");
+      addButton.textContent = "Add to bag +";
+    }, 1100);
     return;
   }
   const quickView = event.target.closest("[data-quick-view]");

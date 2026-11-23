@@ -1,0 +1,62 @@
+[
+  {
+    "id": "void-001",
+    "name": "After Hours Tee",
+    "category": "T-Shirts",
+    "price": 38,
+    "images": ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "A heavyweight, boxy-cut essential in washed midnight cotton. Made to be worn on repeat.",
+    "inStock": true
+  },
+  {
+    "id": "void-002",
+    "name": "Nocturne Hoodie",
+    "category": "Hoodies",
+    "price": 88,
+    "images": ["https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "A substantial brushed-fleece layer with a relaxed silhouette and quietly considered details.",
+    "inStock": true
+  },
+  {
+    "id": "void-003",
+    "name": "Signal Long Sleeve",
+    "category": "T-Shirts",
+    "price": 52,
+    "images": ["https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "Soft, breathable cotton with a clean drape. An everyday uniform, refined down to the last stitch.",
+    "inStock": true
+  },
+  {
+    "id": "void-004",
+    "name": "Form Utility Pant",
+    "category": "Pants",
+    "price": 96,
+    "images": ["https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "description": "A straight-leg utility pant in durable washed twill, finished with considered pockets and hardware.",
+    "inStock": true
+  },
+  {
+    "id": "void-005",
+    "name": "Static Crewneck",
+    "category": "Hoodies",
+    "price": 74,
+    "images": ["https://images.unsplash.com/photo-1578681994506-b8f463449011?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "A relaxed cotton-blend crew with a soft hand feel and just enough structure for cooler nights.",
+    "inStock": true
+  },
+  {
+    "id": "void-006",
+    "name": "Zero Hour Jacket",
+    "category": "Outerwear",
+    "price": 148,
+    "images": ["https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&w=1000&q=85"],
+    "sizes": ["S", "M", "L", "XL"],
+    "description": "A lightweight shell with a sculpted shape, built for the in-between hours and unpredictable weather.",
+    "inStock": true
+  }
+]
